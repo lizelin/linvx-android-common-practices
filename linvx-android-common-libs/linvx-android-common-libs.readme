@@ -1,0 +1,33 @@
+linvx-android-common-libs: andriod的常用lib
+
+一，net.linvx.android.libs.utils
+常用公共方法
+
+二，net.linvx.android.libs.http
+http相关的lib
+几点说明：
+1，一般情况下，可以直接使用LnxHttpHelper中的方法
+2，如果需要自行处理返回的字节流（content），则需要实现LnxHttpResponseStreamProcessor接口并处理。
+调用：
+LnxHttpResponse res = net.linvx.android.http.LnxHttpRequest.createHttpRequest(uri)
+                .setResponseStreamProcessor(new LnxBitmapCheckSizeHttpResponseStreamProcessor())
+                .getResponse();
+LnxHttpResponseStreamProcessor处理后：
+如果该接口返回true，代表已经消费了该返回字节流。
+如果返回false，则会自动使用LnxDefaultHttpResponseStreamProcessor处理。
+目前用到该功能的有两个地方：
+a，net.linvx.android.ui.LnxBitmapCheckSizeHttpResponseStreamProcessor
+获取图片，为了防止OOM，在处理InputStream（content字节流）之前，
+先判断Content-Length值，如果过大，则不读取所有字节流，而是取得其图片的属性，并计算压缩参数，写到LnxHttpResponse的附加数据中
+b，LnxGetInSampleSizeBitmapHttpResponseStreamProcessor
+获取压缩的图片。
+
+三，net.linvx.android.libs.imageloader
+加载图片的lib，缓存在内存和sdcard或内部存储
+/**
+ * 用法：
+ * ImageView iv = act.findViewById(R.id.*****);
+ * LnxImageLoader.init(this);
+ * String uri = "http://www.haishang360.com/data/afficheimg/1457640144791676954.jpg";
+ * LnxImageLoader.getInstance().displayImage(uri, iv);
+ */

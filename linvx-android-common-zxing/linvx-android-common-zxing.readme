@@ -1,0 +1,25 @@
+linvx-android-common-zxing: 条码扫码
+感谢：Ryan.Tang，网上下载其代码，并做了简单处理
+
+基本使用：
+一，在activity中（或者fragment），调用：
+net.linvx.android.zxing.act.MipcaActivityCapture.startBarcodeScanView(this);
+其中this为activity活着fragment实例
+
+二，在activity中（或者fragment）中实现
+    @Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		switch (requestCode) {
+			case MipcaActivityCapture.SCANNIN_GREQUEST_CODE:
+				if(resultCode == RESULT_OK){
+					Bundle bundle = data.getExtras();
+					// 获取扫描结果（条码内容）
+					String text = bundle.getString("result");
+					// 获取扫描的图片
+					Bitmap bitmap = (Bitmap) data.getParcelableExtra("bitmap");
+				}
+				break;
+		}
+	}
+
