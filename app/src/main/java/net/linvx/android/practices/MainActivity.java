@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import net.linvx.android.libs.utils.AppUtils;
 import net.linvx.android.libs.utils.LogUtils;
+import net.linvx.android.zxing.act.ZXingScanActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AppUtils.startActivity(MainActivity.this, ScanBarcodeActivity.class);
+            }
+        });
+
+        Button button_scan_barcode_new = (Button) this.findViewById(R.id.button_scan_barcode_new);
+        button_scan_barcode_new.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppUtils.startActivity(MainActivity.this, ZXingScanActivity.class);
             }
         });
     }

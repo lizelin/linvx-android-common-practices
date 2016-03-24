@@ -45,14 +45,14 @@ android {
     //签名
     signingConfigs {
         debug {
-            storeFile file('/Users/lizelin/linvx/linvxworkspace/AndroidStudioProjects/Android-Apps-Project/app/debug.keystore.jks')
+            storeFile file('/Users/lizelin/linvx/linvxworkspace/AndroidStudioProjects/linvx-android-common-practices/app/debug.keystore.jks')
             keyAlias 'android'
             keyPassword 'android'
             storePassword 'android'
         }
         relealse {
             //这样写就得把demo.jk文件放在项目目录
-            storeFile file('/Users/lizelin/linvx/linvxworkspace/AndroidStudioProjects/Android-Apps-Project/app/release.keystore.jks')
+            storeFile file('/Users/lizelin/linvx/linvxworkspace/AndroidStudioProjects/linvx-android-common-practices/app/release.keystore.jks')
             storePassword 'android'
             keyAlias 'android'
             keyPassword 'android'
