@@ -36,5 +36,5 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="10dp"
         android:layout_below="@id/button_scan_barcode"
-        android:text="条码扫描New" />
+        android:text="next test" />
 </RelativeLayout>
