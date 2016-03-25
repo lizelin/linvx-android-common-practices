@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.codetroopers.betterpickers.numberpicker.NumberPickerBuilder;
+
 import net.linvx.android.libs.utils.AppUtils;
 import net.linvx.android.libs.utils.LogUtils;
 
@@ -48,10 +50,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button button_scan_barcode_new = (Button) this.findViewById(R.id.button_scan_barcode_new);
-        button_scan_barcode_new.setOnClickListener(new View.OnClickListener() {
+        Button button_number_picker = (Button) this.findViewById(R.id.button_number_picker);
+        button_number_picker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                NumberPickerBuilder npb = new NumberPickerBuilder()
+                        .setFragmentManager(getSupportFragmentManager())
+                        .setStyleResId(R.style.BetterPickersDialogFragment_Light)
+                        .setLabelText("BetterPickersDialogFragment.LightBetterPickersDialogFragment.LightBetterPickersDialogFragment.LightBetterPickersDialogFragment.Light");
+                npb.show();
 
             }
         });
