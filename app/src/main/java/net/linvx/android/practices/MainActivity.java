@@ -62,6 +62,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Button button_number_input = (Button) this.findViewById(R.id.button_number_input);
+        button_number_input.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppUtils.startActivity(MainActivity.this, NumberInputActivity.class);
+            }
+        });
     }
 
     @Override

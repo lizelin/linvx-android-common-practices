@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="net.linvx.android.practices.NumberInputActivity">
+
+    <TextView
+        android:id="@+id/textview_number_input_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dip"
+        android:layout_marginRight="0dip"
+        android:layout_marginTop="20dip"
+        android:gravity="right"
+        android:textColor="#000"
+        android:text="数量:"
+        android:textSize="40dp" />
+    <TextView
+        android:id="@+id/textview_number_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dip"
+        android:layout_marginRight="0dip"
+        android:layout_marginTop="20dip"
+        android:background="#cccccc"
+        android:gravity="right"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/textview_number_input_label"
+        android:text="0"
+        android:textSize="40dp" />
+
+    <android.inputmethodservice.KeyboardView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/keyboradview_number_input"
+        android:layout_below="@id/textview_number_input"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_marginTop="5dp"
+        android:visibility="visible"/>
+</RelativeLayout>

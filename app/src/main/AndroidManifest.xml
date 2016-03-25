@@ -40,6 +40,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="net.linvx.android.practices.MainActivity" />
         </activity>
+        <activity android:name=".NumberInputActivity"></activity>
     </application>
 
 </manifest>
