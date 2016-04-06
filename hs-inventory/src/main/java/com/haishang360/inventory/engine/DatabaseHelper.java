@@ -4,7 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.haishang360.inventory.MyApplication;
+import net.linvx.android.libs.common.MyApplication;
 
 /**
  * Created by lizelin on 16/3/31.
