@@ -123,7 +123,7 @@ public class LnxHttpHelper {
                                           String method,
                                           @Nullable Map<String, String> headers,
                                           @Nullable List<LnxCookie> cookies,
-                                          @Nullable byte[] postData,
+                                           byte[] postData,
                                           @Nullable String tid
     ) {
         if (StringUtils.isEmpty(uri))
@@ -132,7 +132,7 @@ public class LnxHttpHelper {
         if (StringUtils.isEmpty(method))
             method = LnxHttpConstants.HTTP_METHOD_GET;
 
-        if (method.equalsIgnoreCase(LnxHttpConstants.HTTP_METHOD_POST))
+        if (method.equalsIgnoreCase(LnxHttpConstants.HTTP_METHOD_GET))
             req = LnxHttpRequest.createHttpRequest(uri);
         else
             req = LnxHttpRequest.createHttpPostRequest(uri, postData);
@@ -148,6 +148,109 @@ public class LnxHttpHelper {
                 req.addHttpCookie(cookie);
             }
         }
+        if (postData!=null && postData.length>0)
+            req.setPostData(postData);
+
         return req.getResponse();
     }
+
+    /**
+     * http get helper
+     *
+     * @param uri
+     * @return
+     */
+    public static LnxHttpResponse httpGetResponse(String uri) {
+        return LnxHttpHelper.execute(uri, LnxHttpConstants.HTTP_METHOD_GET, null, null, null, null);
+    }
+
+    /**
+     * http get helper
+     *
+     * @param uri
+     * @param tid
+     * @return
+     */
+    public static LnxHttpResponse httpGetResponse(String uri, String tid) {
+        return LnxHttpHelper.execute(uri, LnxHttpConstants.HTTP_METHOD_GET, null, null, null, tid);
+    }
+
+    /**
+     * http get helper
+     *
+     * @param uri
+     * @param headers
+     * @param cookies
+     * @return
+     */
+    public static LnxHttpResponse httpGetResponse(String uri, Map<String, String> headers, List<LnxCookie> cookies) {
+        return LnxHttpHelper.execute(uri, LnxHttpConstants.HTTP_METHOD_GET, headers, cookies, null, null);
+    }
+
+    /**
+     * http get helper
+     *
+     * @param uri
+     * @param headers
+     * @param cookies
+     * @param tid
+     * @return
+     */
+    public static LnxHttpResponse httpGetResponse(String uri, Map<String, String> headers, List<LnxCookie> cookies, String tid) {
+        return LnxHttpHelper.execute(uri, LnxHttpConstants.HTTP_METHOD_GET, headers, cookies, null, tid);
+    }
+
+    /**
+     * http post helper
+     *
+     * @param uri
+     * @param postData
+     * @return
+     */
+    public static LnxHttpResponse httpPostResponse(String uri, byte[] postData) {
+        return LnxHttpHelper.execute(uri, LnxHttpConstants.HTTP_METHOD_POST, null, null, postData, null);
+    }
+
+    /**
+     * http post helper
+     *
+     * @param uri
+     * @param postData
+     * @param tid
+     * @return
+     */
+    public static LnxHttpResponse httpPostResponse(String uri, byte[] postData, String tid) {
+        return LnxHttpHelper.execute(uri, LnxHttpConstants.HTTP_METHOD_POST, null, null, postData, tid);
+    }
+
+    /**
+     * http post helper
+     *
+     * @param uri
+     * @param headers
+     * @param cookies
+     * @param postData
+     * @return
+     */
+    public static LnxHttpResponse httpPostResponse(String uri, Map<String, String> headers, List<LnxCookie> cookies, byte[] postData) {
+        return LnxHttpHelper.execute(uri, LnxHttpConstants.HTTP_METHOD_POST, headers, cookies, postData, null);
+    }
+
+    /**
+     * @param uri
+     * @param headers
+     * @param cookies
+     * @param postData
+     * @param tid
+     * @return
+     */
+    public static LnxHttpResponse httpPostResponse(String uri,
+                                                   Map<String, String> headers,
+                                                   List<LnxCookie> cookies,
+                                                   byte[] postData,
+                                                   String tid) {
+        return LnxHttpHelper.execute(uri, LnxHttpConstants.HTTP_METHOD_POST, headers,
+                cookies, postData, tid);
+    }
+
 }

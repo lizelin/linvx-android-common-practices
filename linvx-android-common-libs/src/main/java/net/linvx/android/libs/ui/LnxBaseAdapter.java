@@ -67,7 +67,7 @@ public abstract class  LnxBaseAdapter<T> extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int i) {
+    public T getItem(int i) {
         return itemList.get(i);
     }
 

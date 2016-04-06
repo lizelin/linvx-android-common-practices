@@ -10,10 +10,8 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 import android.net.ConnectivityManager;
-import android.net.Network;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
 import android.support.v4.app.ActivityCompat;
@@ -41,6 +39,10 @@ public class AppUtils {
      */
     public static void showMsg(Context context, String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
+    }
+
+    public static void showMsgShortTime(Context context, String msg) {
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -74,18 +76,21 @@ public class AppUtils {
      */
     public boolean isConnectingToInternet(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Network[] networks = connectivityManager.getAllNetworks();
-            NetworkInfo networkInfo;
-            for (Network mNetwork : networks) {
-                networkInfo = connectivityManager.getNetworkInfo(mNetwork);
-                if (networkInfo.getState().equals(NetworkInfo.State.CONNECTED)) return true;
-            }
-        } else if (connectivityManager != null) {
-            NetworkInfo[] info = connectivityManager.getAllNetworkInfo();
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            Network[] networks = connectivityManager.getAllNetworks();
+//            NetworkInfo networkInfo;
+//            for (Network mNetwork : networks) {
+//                networkInfo = connectivityManager.getNetworkInfo(mNetwork);
+//                if (networkInfo.getState().equals(NetworkInfo.State.CONNECTED)) return true;
+//            }
+//        } else if (connectivityManager != null) {
+//            NetworkInfo[] info = connectivityManager.getAllNetworkInfo();
+//            if (info != null) for (NetworkInfo anInfo : info)
+//                if (anInfo.getState() == NetworkInfo.State.CONNECTED) return true;
+//        }
+        NetworkInfo[] info = connectivityManager.getAllNetworkInfo();
             if (info != null) for (NetworkInfo anInfo : info)
                 if (anInfo.getState() == NetworkInfo.State.CONNECTED) return true;
-        }
         return false;
     }
 

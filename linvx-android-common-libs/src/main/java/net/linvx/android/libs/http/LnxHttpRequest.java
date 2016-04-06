@@ -299,7 +299,8 @@ public class LnxHttpRequest {
             res.fetchResponseHeaders(urlCon.getHeaderFields());
 
             // 处理responseCookie
-            res.fetchResponseCookies(urlCon.getHeaderFields().get(LnxHttpConstants.HTTP_HEADER_NAME_REQ_COOKIE));
+            res.fetchResponseCookies(urlCon.getHeaderFields().get(
+                    LnxHttpConstants.HTTP_HEADER_NAME_RES_COOKIE));
 
             // 处理 charset
             String cs = getCharsetByResponseContentType(res.getResponseHeaderFirstValue("Content-Type"));

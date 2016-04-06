@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hs-inventory/hs-inventory.iml" filepath="$PROJECT_DIR$/hs-inventory/hs-inventory.iml" />
       <module fileurl="file://$PROJECT_DIR$/linvx-android-common-libs/linvx-android-common-libs.iml" filepath="$PROJECT_DIR$/linvx-android-common-libs/linvx-android-common-libs.iml" />
       <module fileurl="file://$PROJECT_DIR$/linvx-android-common-practices.iml" filepath="$PROJECT_DIR$/linvx-android-common-practices.iml" />
       <module fileurl="file://$PROJECT_DIR$/linvx-android-common-zxing/linvx-android-common-zxing.iml" filepath="$PROJECT_DIR$/linvx-android-common-zxing/linvx-android-common-zxing.iml" />

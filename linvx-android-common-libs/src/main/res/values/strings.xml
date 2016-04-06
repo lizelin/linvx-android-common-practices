@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">linvx-android-common-libs</string>
+
+    <!--loading dialg-->
+    <string name="text_loading_default">加载中......</string>
+
+    <!--prompt dialg-->
+    <string name="text_prompt_title">提示信息</string>
+    <string name="text_prompt_default">确实要执行该操作吗？</string>
+    <string name="text_prompt_ok_btn">确定</string>
+    <string name="text_prompt_cancel_btn">取消</string>
 </resources>

@@ -24,7 +24,7 @@ task clean(type: Delete) {
 
 
 subprojects{
-    configure(allprojects - project(':app')) {
+    configure(allprojects - project(':app') - project(':hs-inventory')) {
         apply plugin: 'com.android.library'
         android {
             compileSdkVersion 23
@@ -39,6 +39,8 @@ subprojects{
             lintOptions {
                 abortOnError false
             }
+
+
         }
         dependencies {
             testCompile 'junit:junit:4.12'

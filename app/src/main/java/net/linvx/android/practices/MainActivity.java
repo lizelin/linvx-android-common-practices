@@ -71,13 +71,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button button_inventory = (Button) this.findViewById(R.id.button_inventory);
-        button_inventory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //AppUtils.startActivity(MainActivity.this, com.haishang360.inventory.MainActivity.class);
-            }
-        });
     }
 
     @Override
