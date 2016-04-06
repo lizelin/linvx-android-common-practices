@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.haishang360.inventory.activity.WhInvListActivity"
+    tools:showIn="@layout/activity_wh_inv_list">
+
+    <Button
+        android:id="@+id/wh_inv_list_activity_upload"
+        style="@style/ButtonStyle.FillWidth"
+        android:text="@string/text_upload"
+        android:visibility="gone"/>
+
+    <ListView
+        android:id="@+id/wh_inv_list_activity_list"
+        style="@style/ListView"
+        android:layout_width="fill_parent"
+        android:layout_margin="0dp"
+        android:layout_below="@id/wh_inv_list_activity_upload"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

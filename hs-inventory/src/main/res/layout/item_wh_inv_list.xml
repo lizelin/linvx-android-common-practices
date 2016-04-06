@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/inv_list_item_bg"
+    android:padding="4dp"
+    android:layout_margin="4dp">
+    <TextView
+        android:id="@+id/wh_inv_list_activity_list_item_barcodeandcount"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text=".."
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/font_size_smaller" />
+    <TextView
+        android:id="@+id/wh_inv_list_activity_list_item_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=".."
+        android:textColor="@android:color/black"
+        android:layout_below="@id/wh_inv_list_activity_list_item_barcodeandcount"
+        android:textSize="@dimen/font_size_smaller" />
+
+
+</RelativeLayout>

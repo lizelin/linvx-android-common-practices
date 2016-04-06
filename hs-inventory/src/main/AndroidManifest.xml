@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.haishang360.inventory">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/hslogo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="CHANNEL_NAME"
+            android:value="${CHANNEL_VALUE}" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".activity.InvListActivity"
+            android:label="@string/title_activity_inv_list"
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.haishang360.inventory.activity.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activity.WhInvListActivity"
+            android:label="@string/title_activity_wh_inv_list"
+            android:parentActivityName=".activity.InvListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.haishang360.inventory.activity.InvListActivity" />
+        </activity>
+        <activity
+            android:name=".activity.HsScanActivity"
+            android:label="@string/title_activity_hs_scan"
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.haishang360.inventory.activity.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activity.UploadDataActivity"
+            android:label="@string/title_activity_upload_data"
+            android:parentActivityName=".activity.WhInvListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.haishang360.inventory.activity.WhInvListActivity" />
+        </activity>
+    </application>
+
+</manifest>

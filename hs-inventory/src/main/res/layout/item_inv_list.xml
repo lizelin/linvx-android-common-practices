@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/inv_list_item_bg"
+    android:padding="4dp"
+    android:layout_margin="4dp">
+    <TextView
+        android:id="@+id/inv_list_activity_list_item_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text=".."
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/font_size_smaller" />
+    <TextView
+        android:id="@+id/inv_list_activity_list_item_inv_count"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=".."
+        android:textColor="@android:color/black"
+        android:layout_below="@id/inv_list_activity_list_item_name"
+        android:textSize="@dimen/font_size_smaller" />
+    <LinearLayout
+        android:id="@+id/inv_list_activity_list_item_button_grp1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_below="@id/inv_list_activity_list_item_inv_count">
+        <Button
+            android:id="@+id/inv_list_activity_list_item_do_inv"
+            android:layout_width="wrap_content"
+            style="@style/ButtonStyle"
+            android:text="@string/inv_list_activity_button_text_do_inv"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/inv_list_activity_list_item_delete"
+            android:layout_width="wrap_content"
+            style="@style/ButtonStyle"
+            android:text="@string/inv_list_activity_button_text_delete"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/inv_list_activity_list_item_button_grp2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_below="@id/inv_list_activity_list_item_button_grp1">
+        <Button
+            android:id="@+id/inv_list_activity_list_item_show"
+            android:layout_width="wrap_content"
+            style="@style/ButtonStyle"
+            android:layout_weight="1"
+            android:text="@string/inv_list_activity_button_text_show" />
+        <Button
+            android:id="@+id/inv_list_activity_list_item_uninv"
+            android:layout_width="wrap_content"
+            style="@style/ButtonStyle"
+            android:text="@string/inv_list_activity_button_text_uninv"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+</RelativeLayout>
