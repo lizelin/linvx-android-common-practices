@@ -79,11 +79,20 @@ public class HsScanActivity extends HsBaseActivity {
                     return;
                 SQLiteDatabase db = DatabaseHelper.getReadableDb();
                 Sku sku = Sku.getSkuFromDb(db, text);
-                db.close();
+
                 if (sku == null)
                     mEditTextSku.setText("无此商品");
                 else
                     mEditTextSku.setText(sku.vc2mdse_name + "(" + sku.vc2mdse_sku + ")");
+
+                Inv inv = Inv.getStockFromDb(db, guid, text);
+                if (inv == null) {
+                    textView.setText("0");
+                } else {
+                    textView.setText(""+inv.numstock_count);
+                }
+                db.close();
+
             }
 
             @Override
