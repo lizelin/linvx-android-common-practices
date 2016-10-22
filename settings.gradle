@@ -1,1 +1,1 @@
-include ':hs-inventory', ':app', ':linvx-android-common-libs', ':linvx-android-common-zxing'
+include ':hs-inventory', ':app', ':linvx-android-common-libs', ':linvx-android-common-zxing', ':linvx-android-common-baidu-asr'

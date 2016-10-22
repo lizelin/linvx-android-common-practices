@@ -65,11 +65,11 @@ public class UploadDataTask extends AsyncTask<Void, Void, LnxHttpResponse> {
         db.close();
         if (list == null)
             return null;
-        String format = "%s,\"%s\",\"%s\",%s\n";
+        String format = "%s,\"%s\",\"%s\",%s,\"%s\"\n";
         StringBuilder sb = new StringBuilder();
         for (int i=0; i<list.size(); i++) {
             Inv inv = list.get(i);
-            sb.append(String.format(format, ""+(i+1), inv.vc2mdse_code, inv.vc2mdse_name, ""+inv.numstock_count));
+            sb.append(String.format(format, ""+(i+1), inv.vc2mdse_code, inv.vc2mdse_name, ""+inv.numstock_count, ""+inv.vc2expiredesc));
         }
 
         String data = sb.toString();

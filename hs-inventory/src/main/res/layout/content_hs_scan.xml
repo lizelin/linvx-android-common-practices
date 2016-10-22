@@ -24,7 +24,7 @@
             android:hint="@string/hs_scan_activity_text_view_barcode"
             android:inputType="number"
             android:maxLines="1"
-            android:singleLine="true" />
+            android:singleLine="true"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -44,58 +44,130 @@
 
     </android.support.design.widget.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textview_number_input_label"
+    <android.support.design.widget.TextInputLayout
         android:layout_below="@id/hs_scan_activity_text_view_sku_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="0dip"
-        android:layout_marginRight="0dip"
-        android:layout_marginTop="20dip"
-        android:gravity="right"
-        android:textColor="#000"
-        android:text="@string/hs_scan_activity_text_count"
-        android:textSize="20dp" />
-    <TextView
-        android:id="@+id/textview_number_input"
-        android:layout_width="wrap_content"
-        android:minWidth="100dp"
+        android:id="@+id/hs_scan_activity_text_view_number_label">
+
+        <AutoCompleteTextView
+            android:id="@+id/textview_number_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hs_scan_activity_text_count"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_below="@id/hs_scan_activity_text_view_number_label"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="0dip"
-        android:layout_marginRight="0dip"
-        android:layout_marginTop="20dip"
-        android:background="#cccccc"
-        android:gravity="right"
-        android:layout_below="@id/hs_scan_activity_text_view_sku_label"
-        android:layout_toRightOf="@id/textview_number_input_label"
-        android:text="0"
-        android:textSize="20dp" />
+        android:id="@+id/hs_scan_activity_text_view_valid_label">
+
+        <AutoCompleteTextView
+            android:id="@+id/textview_valid_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hs_scan_activity_text_valid"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_below="@id/hs_scan_activity_text_view_valid_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hs_scan_activity_text_view_curr_number_label">
+
+        <AutoCompleteTextView
+            android:id="@+id/textview_curr_number_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hs_scan_activity_curr_text_count"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@+id/hs_scan_activity_text_view_curr_valid_label"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_below="@id/hs_scan_activity_text_view_curr_number_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hs_scan_activity_text_view_curr_valid_label">
+
+        <AutoCompleteTextView
+            android:id="@+id/textview_curr_valid_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hs_scan_activity_curr_text_valid"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/textview_number_input_label"-->
+        <!--android:layout_below="@id/hs_scan_activity_text_view_sku_label"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="0dip"-->
+        <!--android:layout_marginRight="0dip"-->
+        <!--android:layout_marginTop="20dip"-->
+        <!--android:gravity="right"-->
+        <!--android:textColor="#000"-->
+        <!--android:text="@string/hs_scan_activity_text_count"-->
+        <!--android:textSize="20dp" />-->
+    <!--<TextView-->
+        <!--android:id="@+id/textview_number_input"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:minWidth="100dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="0dip"-->
+        <!--android:layout_marginRight="0dip"-->
+        <!--android:layout_marginTop="20dip"-->
+        <!--android:background="#cccccc"-->
+        <!--android:gravity="right"-->
+        <!--android:layout_below="@id/hs_scan_activity_text_view_sku_label"-->
+        <!--android:layout_toRightOf="@id/textview_number_input_label"-->
+        <!--android:text="0"-->
+        <!--android:textSize="20dp" />-->
     <Button
         android:id="@+id/button_save_to_db"
         android:layout_width="wrap_content"
         style="@style/ButtonStyle"
-        android:layout_below="@id/hs_scan_activity_text_view_sku_label"
+        android:layout_below="@id/hs_scan_activity_text_view_curr_valid_label"
         android:layout_alignParentRight="true"
         android:text="@string/button_save_to_db_text" />
 
 
-    <android.inputmethodservice.KeyboardView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:id="@+id/keyboradview_number_input"
-        android:layout_below="@id/textview_number_input"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:layout_marginTop="5dp"/>
+    <!--<android.inputmethodservice.KeyboardView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="300dp"-->
+        <!--android:id="@+id/keyboradview_number_input"-->
+        <!--android:layout_below="@id/textview_number_input"-->
+        <!--android:focusable="true"-->
+        <!--android:focusableInTouchMode="true"-->
+        <!--android:layout_marginTop="5dp"/>-->
 
-    <ImageView
-        android:id="@+id/image_view_barcode"
-        android:layout_width="fill_parent"
-        android:scaleType="centerInside"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/keyboradview_number_input"
-        android:minHeight="300dp"
-        android:visibility="gone"/>
+    <!--<ImageView-->
+        <!--android:id="@+id/image_view_barcode"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:scaleType="centerInside"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/keyboradview_number_input"-->
+        <!--android:minHeight="300dp"-->
+        <!--android:visibility="gone"/>-->
 
 
 </RelativeLayout>

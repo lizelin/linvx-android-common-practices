@@ -69,6 +69,7 @@ public class LnxNumberKeyboard {
                     input = input.substring(0, input.length()-1);
             } else if (primaryCode == 4896) {// 清空
                 input = "";
+//                hideKeyboard();
             } else { //将要输入的数字现在编辑框中
                 input += Character.toString((char) primaryCode);
             }
@@ -90,5 +91,12 @@ public class LnxNumberKeyboard {
         if (visibility == View.GONE || visibility == View.INVISIBLE) {
             keyboardView.setVisibility(View.VISIBLE);
         }
+    }
+
+
+    public void hideKeyboard() {
+        int visibility = keyboardView.getVisibility();
+        keyboardView.setVisibility(View.GONE);
+
     }
 }

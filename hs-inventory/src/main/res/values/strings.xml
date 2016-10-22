@@ -28,7 +28,11 @@
     <string name="title_activity_hs_scan">HsScanActivity</string>
     <string name="hs_scan_activity_text_view_barcode">条码:</string>
     <string name="hs_scan_activity_text_view_sku">商品:</string>
-    <string name="hs_scan_activity_text_count">数量:</string>
+    <string name="hs_scan_activity_text_count">已盘点数量(不含本次)</string>
+    <string name="hs_scan_activity_curr_text_count">本次数量</string>
+    <string name="hs_scan_activity_curr_text_valid">本次有效期(yyyymmdd)</string>
+    <string name="hs_scan_activity_text_valid">已盘点有效期数据</string>
+
     <string name="button_save_to_db_text">保存</string>
 
 

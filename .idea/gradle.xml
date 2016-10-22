@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/hs-inventory" />
+            <option value="$PROJECT_DIR$/linvx-android-common-baidu-asr" />
             <option value="$PROJECT_DIR$/linvx-android-common-libs" />
             <option value="$PROJECT_DIR$/linvx-android-common-zxing" />
           </set>

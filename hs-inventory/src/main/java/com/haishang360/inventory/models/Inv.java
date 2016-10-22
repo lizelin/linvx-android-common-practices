@@ -10,13 +10,13 @@ import java.util.List;
  * Created by lizelin on 16/3/30.
  */
 public class Inv {
-    public String vc2guid, vc2account, vc2mdse_code, vc2mdse_name;
+    public String vc2guid, vc2account, vc2mdse_code, vc2mdse_name, vc2expiredesc;
     public int numstock_count;
 
     public static Inv getStockFromDb(SQLiteDatabase db, String guid, String mdse_code) {
         Inv inv = null;
 
-        String sql = "select t.vc2guid, t.vc2account, t.vc2mdse_code, t.numstock_count, s.vc2mdse_name, s.vc2mdse_sku from" +
+        String sql = "select t.vc2guid, t.vc2account, t.vc2mdse_code, t.numstock_count, s.vc2mdse_name, s.vc2mdse_sku, t.vc2expiredesc from" +
                 "   invs t, skus s where t.vc2guid=? and t.vc2mdse_code=? " +
                 "   and t.vc2mdse_code = s.vc2mdse_code";
         Cursor c = db.rawQuery(sql, new String[]{guid, mdse_code});
@@ -27,6 +27,7 @@ public class Inv {
             inv.vc2mdse_code = c.getString(2);
             inv.numstock_count = c.getInt(3);
             inv.vc2mdse_name = c.getString(4) + "("+c.getString(5)+")";
+            inv.vc2expiredesc = c.getString(6);
         }
         c.close();
         return inv;
@@ -36,7 +37,7 @@ public class Inv {
         Inv inv = null;
         List<Inv> list = new ArrayList<Inv>();
         String sql = "select t.vc2guid, t.vc2account, t.vc2mdse_code, t.numstock_count, " +
-                "   s.vc2mdse_name, s.vc2mdse_sku, t.id from" +
+                "   s.vc2mdse_name, s.vc2mdse_sku, t.id, t.vc2expiredesc from" +
                 "   invs t, skus s where t.vc2guid=?  " +
                 "   and t.vc2mdse_code = s.vc2mdse_code " +
                 "   order by t.id desc";
@@ -48,6 +49,7 @@ public class Inv {
             inv.vc2mdse_code = c.getString(2);
             inv.numstock_count = c.getInt(3);
             inv.vc2mdse_name = c.getString(4) + "("+c.getString(5)+")";
+            inv.vc2expiredesc = c.getString(7);
             list.add(inv);
         }
         c.close();
@@ -96,10 +98,15 @@ public class Inv {
         String sql = "delete from invs where vc2guid=? and vc2mdse_code=?";
         if (check) db.execSQL(sql, new Object[]{this.vc2guid, this.vc2mdse_code});
 
-        sql = "insert into invs(vc2guid, vc2account, vc2mdse_code, numstock_count)" +
-                "   values(?,?,?,?)";
-        db.execSQL(sql, new Object[]{this.vc2guid, this.vc2account, this.vc2mdse_code, this.numstock_count});
+        sql = "insert into invs(vc2guid, vc2account, vc2mdse_code, numstock_count, vc2expiredesc)" +
+                "   values(?,?,?,?,?)";
+        db.execSQL(sql, new Object[]{this.vc2guid, this.vc2account, this.vc2mdse_code, this.numstock_count, this.vc2expiredesc});
 
+    }
+
+    public void delete(SQLiteDatabase db) {
+        String sql = "delete from invs where vc2guid=? and vc2mdse_code=?";
+       db.execSQL(sql, new Object[]{this.vc2guid, this.vc2mdse_code});
     }
 
     public static int getInvCount(SQLiteDatabase db, String guid) {

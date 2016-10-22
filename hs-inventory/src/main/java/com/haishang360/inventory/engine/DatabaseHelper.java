@@ -71,11 +71,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(sql);
         sql = "create table skus (vc2mdse_code varchar, vc2mdse_name varchar, vc2mdse_sku varchar, primary key (vc2mdse_code))";
         db.execSQL(sql);
-        sql = "create table stocks (vc2guid varchar, vc2account, vc2mdse_code, numstock_count smallint, primary key(vc2guid,vc2mdse_code))";
+        sql = "create table stocks (vc2guid varchar, vc2account varchar, vc2mdse_code varchar, numstock_count smallint, primary key(vc2guid,vc2mdse_code))";
         db.execSQL(sql);
         sql = "create index idx_stock on stocks (vc2account)";
         db.execSQL(sql);
-        sql = "create table invs (id INTEGER AUTO_INCREMENT, vc2guid varchar, vc2account, vc2mdse_code, numstock_count smallint, primary key(vc2guid,vc2mdse_code))";
+        sql = "create table invs (id INTEGER AUTO_INCREMENT, vc2guid varchar, vc2account varchar, vc2mdse_code varchar, numstock_count smallint, vc2expiredesc varchar, primary key(vc2guid,vc2mdse_code))";
         db.execSQL(sql);
         sql = "create index idx_inv on invs (vc2account)";
         db.execSQL(sql);

@@ -101,8 +101,8 @@ public class MainActivity extends HsBaseActivity implements HttpTask.HttpRespons
 
     private void init() {
 //        LnxImageLoader.init(this);
-        LogUtils.turnOff();
-//        LogUtils.turnOn();
+//        LogUtils.turnOff();
+        LogUtils.turnOn();
     }
 
     private void checkLogin() {
@@ -167,7 +167,7 @@ public class MainActivity extends HsBaseActivity implements HttpTask.HttpRespons
                      * test data
                      */
                     Sku skutest = new Sku();
-                    skutest.vc2mdse_code = "6922266449611";
+                    skutest.vc2mdse_code = "6920236708119";
                     skutest.vc2mdse_name = "饼干";
                     skutest.vc2mdse_sku = "500g";
                     skutest.saveToDb(db);
